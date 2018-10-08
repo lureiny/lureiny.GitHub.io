@@ -104,14 +104,14 @@
 <meta property="og:site_name" content="Lureiny">
 <meta property="og:description" content="GCC编译之前一直没有太多了解，直到最近用到JNI调用本地的C语言，才开始研究如何使用GCC，首先在这里感谢网上相关文章的作者 概要本文主要记录在Ubuntu系统下，初步使用GCC进行编译、简单生成静态库和动态库以及介绍GCC编译中参数信息 系统环境Ubuntu Kylin 16.04 LTS gcc version 5.4.0 GCC1、什么是GCC以下内容摘自维基百科： GNU编译器套装（英语">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215153808-700885788.png">
-<meta property="og:image" content="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215322699-234712741.png">
-<meta property="og:image" content="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215939511-1045915395.png">
-<meta property="og:updated_time" content="2018-10-08T03:35:54.790Z">
+<meta property="og:image" content="https://t.hogor.net/image.php?di=KL1D">
+<meta property="og:image" content="https://t.hogor.net/image.php?di=R347">
+<meta property="og:image" content="https://t.hogor.net/image.php?di=5U2D">
+<meta property="og:updated_time" content="2018-10-08T06:05:27.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCC使用小结">
 <meta name="twitter:description" content="GCC编译之前一直没有太多了解，直到最近用到JNI调用本地的C语言，才开始研究如何使用GCC，首先在这里感谢网上相关文章的作者 概要本文主要记录在Ubuntu系统下，初步使用GCC进行编译、简单生成静态库和动态库以及介绍GCC编译中参数信息 系统环境Ubuntu Kylin 16.04 LTS gcc version 5.4.0 GCC1、什么是GCC以下内容摘自维基百科： GNU编译器套装（英语">
-<meta name="twitter:image" content="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215153808-700885788.png">
+<meta name="twitter:image" content="https://t.hogor.net/image.php?di=KL1D">
 
 
 
@@ -343,8 +343,8 @@
 <p><strong>GNU编译器套装</strong>（英语：GNU Compiler Collection，缩写为<strong>GCC</strong>），指一套编程语言编译器，以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC（特别是其中的C语言编译器）也常被认为是跨平台编译器的事实标准。</p>
 <p>原名为<strong>GNU C语言编译器</strong>（<strong>GNU C Compiler</strong>），因为它原本只能处理C语言。GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。</p>
 <p>许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果计算机预装的Mac OS X操作系统也采用这个编译器。</p>
-<h5 id="2、编译过程"><a href="#2、编译过程" class="headerlink" title="2、编译过程"></a>2、编译过程</h5><p><img src="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215153808-700885788.png" alt="img"></p>
-<p><img src="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215322699-234712741.png" alt="后缀名"></p>
+<h5 id="2、编译过程"><a href="#2、编译过程" class="headerlink" title="2、编译过程"></a>2、编译过程</h5><p><img src="https://t.hogor.net/image.php?di=KL1D" alt="img"></p>
+<p><img src="https://t.hogor.net/image.php?di=R347" alt="后缀名"></p>
 <p>Linux程序员可以根据自己的需要让GCC在编译的任何阶段结束。</p>
 <h6 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h6><p>主要对包含的头文件（＃include ）和宏定义（＃define,#ifdef … ）进行处理。可以使用“gcc -E” 让gcc 在预处理之后停止编译过程，生成 *.i 文件。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -E hello.c -o hello.i</span><br></pre></td></tr></table></figure>
@@ -356,7 +356,7 @@
 <h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>生成可执行文件；可以生成的可执行文件格式有： a.out(默认文件名)/*/,当然可能还有其它格式（比如exe）。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc hello.o     # 生成可执行文件 a.out</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc hello.o -o hello       # 生成可执行文件 hello</span><br></pre></td></tr></table></figure>
-<h6 id="编译选项"><a href="#编译选项" class="headerlink" title="编译选项"></a>编译选项</h6><p><img src="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215939511-1045915395.png" alt="编译选项1"></p>
+<h6 id="编译选项"><a href="#编译选项" class="headerlink" title="编译选项"></a>编译选项</h6><p><img src="https://t.hogor.net/image.php?di=5U2D" alt="编译选项1"></p>
 <p>-lm表示链接系统的数学库</p>
 <p><a href="https://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html" target="_blank" rel="noopener">https://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html</a></p>
 <p><a href="https://blog.csdn.net/clozxy/article/details/5716227" target="_blank" rel="noopener">https://blog.csdn.net/clozxy/article/details/5716227</a></p>
