@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Lureiny</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-10-08T03:26:07.587Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Lureiny</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2018/10/08/test/"/>
+    <id>http://yoursite.com/2018/10/08/test/</id>
+    <published>2018-10-08T03:23:14.000Z</published>
+    <updated>2018-10-08T03:26:07.587Z</updated>
+    
+    <content type="html"><![CDATA[<p>test</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;test&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java获取传入参数</title>
+    <link href="http://yoursite.com/2018/09/07/Java%E8%8E%B7%E5%8F%96%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0/"/>
+    <id>http://yoursite.com/2018/09/07/Java获取传入参数/</id>
+    <published>2018-09-07T14:42:56.000Z</published>
+    <updated>2018-09-07T15:03:59.730Z</updated>
+    
+    <content type="html"><![CDATA[<p>java获取传入参数时，参数存储数组中每一个元素均为传入参数</p><p>java获取传入参数，并输出：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">param</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (String arg : args)&#123;</span><br><span class="line">            System.out.println(arg);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行效果如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">java param hello</span><br><span class="line"><span class="meta">#</span><span class="bash"> hello</span></span><br><span class="line">java param hello,world!</span><br><span class="line"><span class="meta">#</span><span class="bash"> hello,world!</span></span><br><span class="line">java param hello world!</span><br><span class="line"><span class="meta">#</span><span class="bash"> hello</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> world!</span></span><br></pre></td></tr></table></figure><p>限制传入参数个数：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">param</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (args.length &gt; <span class="number">3</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"参数过多"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (String arg : args)&#123;</span><br><span class="line">            System.out.println(arg);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行效果：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">java param 1 2 3</span><br><span class="line"><span class="meta">#</span><span class="bash"> 1</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3</span></span><br><span class="line">java param 1 2 3 4</span><br><span class="line"><span class="meta">#</span><span class="bash"> 参数过多</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;java获取传入参数时，参数存储数组中每一个元素均为传入参数&lt;/p&gt;
+&lt;p&gt;java获取传入参数，并输出：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的pathlib包</title>
+    <link href="http://yoursite.com/2018/08/24/Python%E7%9A%84pathlib%E5%8C%85/"/>
+    <id>http://yoursite.com/2018/08/24/Python的pathlib包/</id>
+    <published>2018-08-23T16:27:00.000Z</published>
+    <updated>2018-08-23T17:16:57.810Z</updated>
+    
+    <content type="html"><![CDATA[<p>Python中常用生成文件路径的方式有三种：分别为手动拼接、os.path包、pathlib包（python3）。</p><h4 id="错误的方式——手动拼接"><a href="#错误的方式——手动拼接" class="headerlink" title="错误的方式——手动拼接"></a>错误的方式——手动拼接</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data_folder = <span class="string">"source/data/"</span></span><br><span class="line">file_path = data_folder + <span class="string">"hello.txt"</span></span><br><span class="line">f = open(file_path, <span class="string">"r"</span>)</span><br><span class="line">print(f.read())</span><br><span class="line"><span class="comment"># 'Hello,World!'</span></span><br></pre></td></tr></table></figure><p>为什么是错误的方式呢？</p><p>1、手动拼接的方式麻烦，且容易出错</p><p>2、Windows、Macos、Linux三个系统中的路径连接方式不相同，Windows中使用的是反斜杠“\”，而另外两个系统中使用的是斜杠“/”。不利于跨平台运行。</p><h4 id="旧的方式——os-path"><a href="#旧的方式——os-path" class="headerlink" title="旧的方式——os.path"></a>旧的方式——os.path</h4><p>os.path是一个在python2和python3中都存在的包，功能多样。解决了1中提到的跨平台问题。但却“过于多样”，导致我们很多时候难以记住自己想使用的方法。同时也由于多次使用，使代码不够简洁。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os.path</span><br><span class="line">data_folder = os.path.join(<span class="string">"source"</span>, <span class="string">"data"</span>)</span><br><span class="line">file_path = os.path.join(data_folder, <span class="string">"hello.txt"</span>)</span><br><span class="line">f = open(file_path, <span class="string">"r"</span>)</span><br><span class="line">print(f.read())</span><br><span class="line"><span class="comment"># 'Hello,World!'</span></span><br></pre></td></tr></table></figure><h4 id="更好的方法——pathlib"><a href="#更好的方法——pathlib" class="headerlink" title="更好的方法——pathlib"></a>更好的方法——pathlib</h4><p>pathlib是一个在python3.4+中自带的包。使用方法简单，且功能多样。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">data_folder = Path(<span class="string">"source/data/"</span>)</span><br><span class="line">file_path = data_folder / <span class="string">"hello.txt"</span></span><br><span class="line">f = open(file_path, <span class="string">"r"</span>)</span><br><span class="line">print(f.read())</span><br><span class="line"><span class="comment"># Hello,World!</span></span><br></pre></td></tr></table></figure><p>如果只是这些，或许大家会说，这个也并没有比os.path好多少嘛！</p><p>其实，Path方法还有read的相关方法，这样就可以减少我们调用open的次数，同时精简代码量。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(file_path.read_bytes())</span><br><span class="line"><span class="comment"># b'Hello,World!'</span></span><br><span class="line">print(file_path.read_text())</span><br><span class="line"><span class="comment"># Hello,World!</span></span><br></pre></td></tr></table></figure><p>还有一些其他方便常用的方法，可以大大精简我们的代码量。使我们的代码更加美观。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">file_path.suffix</span><br><span class="line"><span class="comment"># 'txt' 显示文件后缀</span></span><br><span class="line">file_path.stem</span><br><span class="line"><span class="comment"># 'hello' 显示文件名(不含后缀)</span></span><br><span class="line">file_path.name</span><br><span class="line"><span class="comment"># 'hello.txt' 返回文件全名</span></span><br></pre></td></tr></table></figure><p>除此之外，还有rename、replace、is_file、exists等方法，详情请看<a href="https://docs.python.org/3/library/pathlib.html" target="_blank" rel="noopener">官方文档</a>。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Python中常用生成文件路径的方式有三种：分别为手动拼接、os.path包、pathlib包（python3）。&lt;/p&gt;
+&lt;h4 id=&quot;错误的方式——手动拼接&quot;&gt;&lt;a href=&quot;#错误的方式——手动拼接&quot; class=&quot;headerlink&quot; title=&quot;错误的方式
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>frp配置使用</title>
+    <link href="http://yoursite.com/2018/08/19/frp%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/08/19/frp配置使用/</id>
+    <published>2018-08-19T01:19:54.000Z</published>
+    <updated>2018-08-20T17:00:08.980Z</updated>
+    
+    <content type="html"><![CDATA[<p>frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议。<a href="https://github.com/fatedier/frp" target="_blank" rel="noopener">项目主页</a>，<a href="https://github.com/fatedier/frp/blob/master/README_zh.md" target="_blank" rel="noopener">中文文档</a>。</p><h4 id="为什么要用内网穿透"><a href="#为什么要用内网穿透" class="headerlink" title="为什么要用内网穿透"></a>为什么要用内网穿透</h4><p>家用情况下，通常我们无法分配到<a href="https://baike.baidu.com/item/公网IP" target="_blank" rel="noopener">公网IP</a>。这样我们就无法访问家里的路由器或者NAS。在公司情况下，有时出于安全原因，我们的服务器无法直接通过公网访问，只能通过内网访问，这对于我们调试项目或远程办公是很不利的。内网穿透，能够实现使用外部网络访问内部网络。</p><h4 id="可实现功能"><a href="#可实现功能" class="headerlink" title="可实现功能"></a>可实现功能</h4><p>1、外网通过ssh访问内网机器</p><p>2、通过自定义域名访问特定内网服务</p><p>3、……..</p><h4 id="内网穿透软件"><a href="#内网穿透软件" class="headerlink" title="内网穿透软件"></a>内网穿透软件</h4><p>需要自己搭建的有Ngrok、Frp等，后者相对于前者配置更加简洁方便。路由器上有<a href="https://www.ddnsto.com/#/routers" target="_blank" rel="noopener">ddnsto</a>（免费）。ddnsto速度很快，能添加五个地址。在此感谢ddnsto的作者。</p><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>1、一台拥有公网IP的服务器</p><p>2、内网里需要通过外网访问的机器</p><p>3、自定义域名，解析指向公网服务器，域名是可选项，推荐使用。原因文章后面会提到（本文使用的示例域名为<strong>example.com</strong>）</p><h4 id="Frp配置以及使用"><a href="#Frp配置以及使用" class="headerlink" title="Frp配置以及使用"></a>Frp配置以及使用</h4><h5 id="硬件条件"><a href="#硬件条件" class="headerlink" title="硬件条件"></a>硬件条件</h5><p>系统是ubuntu 16.04  X64，服务器使用的是阿里云学生机。</p><h5 id="软件下载和文件介绍"><a href="#软件下载和文件介绍" class="headerlink" title="软件下载和文件介绍"></a>软件下载和文件介绍</h5><p>在<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">releases</a>中下载对应的系统的的最新版软件。本文使用的是frp_0.21.0_linux_amd64。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载文件</span></span><br><span class="line">wget "https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_amd64.tar.gz"</span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压文件</span></span><br><span class="line">tar zxvf frp_0.21.0_linux_amd64.tar.gz</span><br><span class="line">cd frp_0.21.0_linux_amd64/</span><br></pre></td></tr></table></figure><p>解压后的文件中含有以下文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">frpc  frpc_full.ini  frpc.ini  frps  frps_full.ini  frps.ini  LICENSE</span><br></pre></td></tr></table></figure><p>其中frpc、frpc_full.ini、frpc.ini分别为客户端执行文件、客户端完整配置文件、客户端简单配置文件。frps、frps_full.ini、frps.ini分别为服务端执行文件、服务端完整配置文件、服务端简单配置文件。</p><p>在这里，我们可以删除掉客户端的相关文件。</p><p>完整配置文件中包含完整的配置参数信息以及英文说明。也可以在线查看配置信息。</p><p><a href="https://github.com/fatedier/frp/blob/master/conf/frps_full.ini" target="_blank" rel="noopener">frps完整配置文件</a></p><p><a href="https://github.com/fatedier/frp/blob/master/conf/frpc_full.ini" target="_blank" rel="noopener">frpc完整配置文件</a></p><h5 id="配置文件修改"><a href="#配置文件修改" class="headerlink" title="配置文件修改"></a>配置文件修改</h5><h6 id="frps-ini"><a href="#frps-ini" class="headerlink" title="frps.ini"></a>frps.ini</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"><span class="comment"># 监听端口</span></span><br><span class="line">bind_port = 7000</span><br><span class="line"><span class="comment"># http、https使用的端口</span></span><br><span class="line">vhost_http_port = 8080</span><br><span class="line">vhost_https_port = 8443</span><br><span class="line"><span class="comment"># 你的域名，例如你的域名为example.com，不使用域名可以不设置这部分</span></span><br><span class="line">subdomain_host = example.com</span><br><span class="line"><span class="comment"># token的设置用来防止你的Frp服务被其他用户滥用</span></span><br><span class="line">token = *****************</span><br><span class="line"><span class="comment"># 在线查看连接信息的页面，监听7500端口</span></span><br><span class="line">dashboard_addr = 0.0.0.0</span><br><span class="line">dashboard_port = 7500</span><br><span class="line">dashboard_user = username</span><br><span class="line">dashboard_pwd = yourpassword</span><br></pre></td></tr></table></figure><h6 id="frpc-ini"><a href="#frpc-ini" class="headerlink" title="frpc.ini"></a>frpc.ini</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># common公共部分</span></span><br><span class="line">[common]</span><br><span class="line"><span class="comment"># 填你公网服务器的ip，端口对应上面frps.ini中的bind_port</span></span><br><span class="line">server_addr =  xxx.xxx.xxx.xxx</span><br><span class="line">server_port = 7000</span><br><span class="line">token = *****************</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line"><span class="built_in">type</span> = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 6000              <span class="comment"># 自定义的访问内部ssh端口号</span></span><br><span class="line"></span><br><span class="line">[web01]</span><br><span class="line"><span class="built_in">type</span> = http</span><br><span class="line">local_port = 80</span><br><span class="line"><span class="comment"># 此时访问你的内网80端口可以通过域名"web01.example.com"访问</span></span><br><span class="line">subdomain = web01</span><br><span class="line"></span><br><span class="line">[web02]</span><br><span class="line"><span class="built_in">type</span> = http</span><br><span class="line">local_port = xxx</span><br><span class="line">subdomain = web02</span><br></pre></td></tr></table></figure><h5 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h5><h6 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./frps -c frps.ini</span><br></pre></td></tr></table></figure><h6 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./frpc -c frpc.ini</span><br></pre></td></tr></table></figure><h5 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h5><p>1、外网通过ssh访问内网机器</p><p>ssh -oPort=6000 {user}@{ip/域名}</p><p>user为内网机器上的用户名</p><p>2、访问内网80端口服务</p><p>web01.example.com</p><h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>1、阿里云的机器需要配置安全组，打开使用的端口。</p><p>2、阿里云使用域名访问80端口（http）需要将域名备案，否则无法正常使用。</p><h5 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h5><p>可以使用https访问。安装lnmp。lnmp1.5支持使用通配符的ssl证书。</p><p>lnmp安装教程以及配置ssl的方法<a href="https://lnmp.org" target="_blank" rel="noopener">官方网站</a>有教程。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议。&lt;a href=&quot;https://github.com/fatedier/frp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;项目主页&lt;/a&gt;，&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="frp" scheme="http://yoursite.com/tags/frp/"/>
+    
+      <category term="nginx" scheme="http://yoursite.com/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java类-示例</title>
+    <link href="http://yoursite.com/2018/08/01/Java%E7%B1%BB-%E7%A4%BA%E4%BE%8B/"/>
+    <id>http://yoursite.com/2018/08/01/Java类-示例/</id>
+    <published>2018-08-01T08:09:31.000Z</published>
+    <updated>2018-08-01T09:21:50.540Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java类的继承关系：</p><p>Person：父类</p><p>Student：继承于Person，是Person的一个子类</p><p>下面是代码示例：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    Person(String name, <span class="keyword">int</span> age)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"My name is "</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Student类继承于Person</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    String school;</span><br><span class="line"><span class="comment">//    score设置为private，无法被直接访问，只能被内部访问，通过setScore和getScore来设置和获取</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> score;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setScore</span><span class="params">(<span class="keyword">int</span> score)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.score = score;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getScore</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.score;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造方法，不能够继承父类的构造方法，可以使用super来继承参数信息</span></span><br><span class="line">    Student(String name, <span class="keyword">int</span> age, String school) &#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">        <span class="keyword">this</span>.school = school;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//覆盖父类Method</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.sayHello();</span><br><span class="line">        System.out.println(<span class="string">"My school is "</span> + school);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//重载父类Method@Override，此处Method明命名相同，但是参数不同</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(Student another)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (another.score &gt; score) &#123;</span><br><span class="line">            System.out.println(another.name + <span class="string">" is better than "</span> + name + <span class="string">" He is from "</span> + another.school);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(name + <span class="string">" is better than "</span> + another.name + <span class="string">" He is from "</span> + school);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student s = <span class="keyword">new</span> Student(<span class="string">"ZS"</span>, <span class="number">22</span>, <span class="string">"PKU"</span>);</span><br><span class="line">        s.setScore(<span class="number">80</span>);</span><br><span class="line">        System.out.println(s.getScore());</span><br><span class="line">        Student another = <span class="keyword">new</span> Student(<span class="string">"LS"</span>, <span class="number">23</span>, <span class="string">"THU"</span>);</span><br><span class="line">        another.setScore(<span class="number">98</span>);</span><br><span class="line">        s.sayHello(another);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>注：一个源文件中只能有一个public class，且该public class的名字必须和文件名相同。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Java类的继承关系：&lt;/p&gt;
+&lt;p&gt;Person：父类&lt;/p&gt;
+&lt;p&gt;Student：继承于Person，是Person的一个子类&lt;/p&gt;
+&lt;p&gt;下面是代码示例：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td clas
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MacOS Sierra 打开“允许任何来源”</title>
+    <link href="http://yoursite.com/2017/08/29/MacOS-Sierra-%E6%89%93%E5%BC%80%E2%80%9C%E5%85%81%E8%AE%B8%E4%BB%BB%E4%BD%95%E6%9D%A5%E6%BA%90%E2%80%9D/"/>
+    <id>http://yoursite.com/2017/08/29/MacOS-Sierra-打开“允许任何来源”/</id>
+    <published>2017-08-29T03:48:12.000Z</published>
+    <updated>2018-03-28T16:17:04.080Z</updated>
+    
+    <content type="html"><![CDATA[<p>macOS升级到macOS Sierra之后，<code>系统偏好设置-安全和隐私-通用</code>里面的”允许任何来源“选项消失了，但是并没有取消这一功能，而是需要通过命令行来开启这个选项。</p><p>打开Terminal(终端)，输入如下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure><p>然后系统会提示你输入你的管理员用户密码。</p><p>完成上面的操作之后，再次打开<code>系统偏好设置-安全和隐私-通用</code>，就可以看到”允许任何来源“选项了。</p><p>出于安全考虑，建议不要一直打开”允许任何来源“。</p><blockquote><p>取消<code>允许任何来源</code>之后，<code>允许任何来源</code>就会再次消失，此时想再次开启的话，重新按照上面的方法执行即可</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;macOS升级到macOS Sierra之后，&lt;code&gt;系统偏好设置-安全和隐私-通用&lt;/code&gt;里面的”允许任何来源“选项消失了，但是并没有取消这一功能，而是需要通过命令行来开启这个选项。&lt;/p&gt;
+&lt;p&gt;打开Terminal(终端)，输入如下命令：&lt;/p&gt;
+&lt;figu
+      
+    
+    </summary>
+    
+    
+      <category term="MacOS" scheme="http://yoursite.com/tags/MacOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MacOS快速更新软件及系统——命令行</title>
+    <link href="http://yoursite.com/2017/08/25/MacOS%E5%BF%AB%E9%80%9F%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%8F%8A%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    <id>http://yoursite.com/2017/08/25/MacOS快速更新软件及系统——命令行/</id>
+    <published>2017-08-25T05:20:15.000Z</published>
+    <updated>2018-08-01T09:40:01.330Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于网络原因，在MacOS上使用MAS（Mac App Store）更新系统以及软件时经常会遇到缓慢的问题。尤其是当更新系统时，重启安装过程通常要持续10分钟+，这里推荐两种通过命令行的方式来更新系统。</p><h1 id="mas"><a href="#mas" class="headerlink" title="mas"></a>mas</h1><p>mas是MacOS下一款对MAS商店中的应用进行安装和更新的命令行工具。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在终端中运行如下命令：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mas</span><br></pre></td></tr></table></figure><p>没有安装Homebrew(MacOS的包管理程序)的话，可以去<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="noopener">官网</a>下载安装。</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装好mas之后，直接在终端中运行mas，就会出帮助信息。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mas account     # 显示账户信息</span><br><span class="line">mas help        # 显示帮助信息</span><br><span class="line">mas install     # 安装软件，后面需指定App ID</span><br><span class="line">mas list        # 列出通过MAS安装的软件信息</span><br><span class="line">mas outdated    # 列出待更新软件</span><br><span class="line">mas search      # 在mas中搜索，会返回App ID和App的全名</span><br><span class="line">mas upgrade     # 更新全部待更新软件</span><br></pre></td></tr></table></figure><h1 id="softwareupdate"><a href="#softwareupdate" class="headerlink" title="softwareupdate"></a>softwareupdate</h1><p>系统自带的命令，此处只介绍简单的使用，详细使用方法可以查看帮助信息。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">softwareupdate -l       # 检测软件和系统更新</span><br><span class="line">softwareupdate -i -a    # 安装全部更新</span><br></pre></td></tr></table></figure><p>需要<font color="red">注意</font>的是，使用<code>softwareupdate</code>命令更新系统时，更新结束之后要手动重启电脑。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;由于网络原因，在MacOS上使用MAS（Mac App Store）更新系统以及软件时经常会遇到缓慢的问题。尤其是当更新系统时，重启安装过程
+      
+    
+    </summary>
+    
+    
+      <category term="命令行" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub+Hexo+MacOS搭建静态博客</title>
+    <link href="http://yoursite.com/2017/08/17/GitHub-Hexo-MacOS/"/>
+    <id>http://yoursite.com/2017/08/17/GitHub-Hexo-MacOS/</id>
+    <published>2017-08-17T13:15:07.000Z</published>
+    <updated>2018-03-28T16:23:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>之前用过WordPress，但是很臃肿，所以弃而投向Hexo，这里记录一下折腾的过程</code></p><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>1、运行MacOS系统的电脑</p><p>2、Node.js</p><p>用来生成静态页面。Node.js可以去官网下载pkg包，直接安装即可。</p><p>3、Git</p><p>用来提交本地的文件到GitHub。Xcode自带Git。Xcode可以去App Store下载。如果没有安装Xcode，可以通过Homebrew下载安装。</p><h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><p>安装好Node.js和Git之后，就可以开始安装Hexo了，打开终端，运行如下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure><p>根据提示输入管理员密码（通常为Mac登陆密码）后即开始安装（<code>-g</code>：表示全局安装）</p><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>通过终端输入cd到一个目录，执行<code>hexo init</code>命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure><p><code>blog</code>：生成的博文目录。cd切换到blog目录下，执行命令，安装npm：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><p>执行如下命令，开启本地Hexo服务器：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>此时打开浏览器输入网址：<a href="http://127.0.0.1:4000，Hexo的默认安装内容，忘记截图了，大家可以看一下文后引用的文章中的图片。" target="_blank" rel="noopener">http://127.0.0.1:4000，Hexo的默认安装内容，忘记截图了，大家可以看一下文后引用的文章中的图片。</a></p><p>至此，本地的Hexo文件已经设置好了，接下来开始关联GitHub。</p><h2 id="关联GitHub"><a href="#关联GitHub" class="headerlink" title="关联GitHub"></a>关联GitHub</h2><h3 id="检查SSH-Keys是否存在"><a href="#检查SSH-Keys是否存在" class="headerlink" title="检查SSH Keys是否存在"></a>检查SSH Keys是否存在</h3><p>使用如下命令检查是否存在SSH Keys文件，如果有文件<code>id_rsa.pub</code>或<code>id_dsa.pub</code>，则跳过下面的生成SSH Keys的步骤。否则则需要按照下面的步骤生成SSH Keys。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br></pre></td></tr></table></figure><h3 id="生成SSH-Keys"><a href="#生成SSH-Keys" class="headerlink" title="生成SSH Keys"></a>生成SSH Keys</h3><p>执行以下命令生成，注意这里的<a href="mailto:`your_email@example.com" target="_blank" rel="noopener">`your_email@example.com</a>`要使用你的GitHub注册邮箱。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "your_email@example.com"</span><br></pre></td></tr></table></figure><p>默认会在~/.ssh/文件夹下生成<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件。</p><h3 id="将SSH-Keys添加到GitHub中"><a href="#将SSH-Keys添加到GitHub中" class="headerlink" title="将SSH Keys添加到GitHub中"></a>将SSH Keys添加到GitHub中</h3><p>终端中运行如下命令打印出id_rsa.pub文件的内容，复制这些内容并在GitHub的Add SSH Keys页面添加即可。</p><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>登陆GitHub，新建一个仓库，名为<code>用户名.github.io</code>（固定写法）。</p><h3 id="准备第一次同步"><a href="#准备第一次同步" class="headerlink" title="准备第一次同步"></a>准备第一次同步</h3><p>终端cd进入到刚刚创建的<code>blog</code>文件夹下，使用文本编辑器打开<code>_config.yml</code>文件，这里我使用的是<code>vim</code>编辑器，命令如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure><p>打开修改文件的最后部分为如下内容：</p><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//github.com/用户名/用户名.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure><p>用户名替换为你的GitHub用户名。</p><blockquote><p>注意：hexo的所有配置文件中，冒号<code>:</code>后面都要加上一个空格，否则运行会出现错误。</p></blockquote><p>在<code>blog</code>文件夹目录下执行生成静态页面命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate      等价于：hexo g           // 生成静态页面</span><br></pre></td></tr></table></figure><p>然后提交命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy        等价于：hexo d         // 将文章部署到GitHub</span><br></pre></td></tr></table></figure><blockquote><p>如果运行<code>hexo d</code>命令报错，则依次执行以下两条命令来安装<code>hexo-deployer-git</code>：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> npm install hexo-developer-git -—save</span></span><br></pre></td></tr></table></figure></blockquote><blockquote><p>如果依旧报错，那就先执行以下命令然后在执行上面的命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> npm uninstall hexo-developer-git</span></span><br></pre></td></tr></table></figure></p></blockquote><p>再次执行<code>hexo g</code>和<code>hexo d</code>命令</p><blockquote><p>注意：此时，会要求你输入你的用户名和邮箱来确认你的身份，按照提示执行git命令即可。</p></blockquote><p>至此，打开<a href="https://用户名.github.io" target="_blank" rel="noopener">https://用户名.github.io</a>，能看到和本地相同的页面。</p><h2 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h2><p>终端cd到<code>blog</code>目录，执行以下命令新建文章：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new "post_name"</span><br></pre></td></tr></table></figure><p>执行上述命令之后会在blog/source/_posts/生成一个post_name.md的文件。</p><p>编辑好post_name.md后可以分别依次执行如下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure><p>至此，MacOS上搭建基于GitHub的Hexo静态博客就完成了。</p><h2 id="安装theme"><a href="#安装theme" class="headerlink" title="安装theme"></a>安装theme</h2><p>留坑待补</p><h2 id="设置中文显示"><a href="#设置中文显示" class="headerlink" title="设置中文显示"></a>设置中文显示</h2><p>留坑待补</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;之前用过WordPress，但是很臃肿，所以弃而投向Hexo，这里记录一下折腾的过程&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h2&gt;&lt;p
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
