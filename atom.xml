@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-07T15:03:59.730Z</updated>
+  <updated>2018-10-08T03:32:01.109Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GCC编译、参数介绍</title>
+    <link href="http://yoursite.com/2018/10/08/GCC%E7%BC%96%E8%AF%91%E3%80%81%E5%8F%82%E6%95%B0%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://yoursite.com/2018/10/08/GCC编译、参数介绍/</id>
+    <published>2018-10-08T03:29:16.000Z</published>
+    <updated>2018-10-08T03:32:01.109Z</updated>
+    
+    <content type="html"><![CDATA[<p>GCC编译之前一直没有太多了解，直到最近用到<strong>JNI</strong>调用本地的C语言，才开始研究如何使用GCC，首先在这里感谢网上相关文章的作者</p><h4 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h4><p>本文主要记录在Ubuntu系统下，初步使用GCC进行编译、简单生成静态库和动态库以及介绍GCC编译中参数信息</p><h4 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h4><p>Ubuntu Kylin 16.04 LTS</p><p>gcc version 5.4.0</p><h4 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h4><h5 id="1、什么是GCC"><a href="#1、什么是GCC" class="headerlink" title="1、什么是GCC"></a>1、什么是GCC</h5><p>以下内容摘自维基百科：</p><p><strong>GNU编译器套装</strong>（英语：GNU Compiler Collection，缩写为<strong>GCC</strong>），指一套编程语言编译器，以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC（特别是其中的C语言编译器）也常被认为是跨平台编译器的事实标准。</p><p>原名为<strong>GNU C语言编译器</strong>（<strong>GNU C Compiler</strong>），因为它原本只能处理C语言。GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。</p><p>许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果计算机预装的Mac OS X操作系统也采用这个编译器。</p><h5 id="2、编译过程"><a href="#2、编译过程" class="headerlink" title="2、编译过程"></a>2、编译过程</h5><p><img src="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215153808-700885788.png" alt="img"></p><p><img src="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215322699-234712741.png" alt="后缀名"></p><p>Linux程序员可以根据自己的需要让GCC在编译的任何阶段结束。</p><h6 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h6><p>主要对包含的头文件（＃include ）和宏定义（＃define,#ifdef … ）进行处理。可以使用“gcc -E” 让gcc 在预处理之后停止编译过程，生成 *.i 文件。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -E hello.c -o hello.i</span><br></pre></td></tr></table></figure><h6 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h6><p>gcc 首先要检查代码的规范性，是否有语法错误等。以确定代码实际要做的工作，在检查无误后，gcc 把代码翻译成汇编语言。用户可以使用-S 选项进行查看，该选项只进 行编译而不进行汇编，生成汇编代码。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -S hello.i -o hello.s</span><br></pre></td></tr></table></figure><h6 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h6><p>生成目标代码 <em>.o ；有两种方式：使用 gcc 直接从源代码生成目标代码 gcc -c </em>.s -o <em>.o 以及使用汇编器从汇编代码生成目标代码 as </em>.s -o <em>.o，也可以直接使用as </em>.s, 将<strong>执行汇编、链接过程生成可执行文件a.out</strong>, 可以像上面使用<strong>-o 选项</strong>指定输出文件的格式</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -c hello.s -o hello.o</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">as hello.s -o hello.o</span><br></pre></td></tr></table></figure><h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>生成可执行文件；可以生成的可执行文件格式有： a.out(默认文件名)/*/,当然可能还有其它格式（比如exe）。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc hello.o     # 生成可执行文件 a.out</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc hello.o -o hello       # 生成可执行文件 hello</span><br></pre></td></tr></table></figure><h6 id="编译选项"><a href="#编译选项" class="headerlink" title="编译选项"></a>编译选项</h6><p><img src="https://images2017.cnblogs.com/blog/1055519/201710/1055519-20171030215939511-1045915395.png" alt="编译选项1"></p><p>-lm表示链接系统的数学库</p><p><a href="https://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html" target="_blank" rel="noopener">https://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html</a></p><p><a href="https://blog.csdn.net/clozxy/article/details/5716227" target="_blank" rel="noopener">https://blog.csdn.net/clozxy/article/details/5716227</a></p><p><a href="https://www.cnblogs.com/king-lps/p/7757919.html" target="_blank" rel="noopener">https://www.cnblogs.com/king-lps/p/7757919.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;GCC编译之前一直没有太多了解，直到最近用到&lt;strong&gt;JNI&lt;/strong&gt;调用本地的C语言，才开始研究如何使用GCC，首先在这里感谢网上相关文章的作者&lt;/p&gt;
+&lt;h4 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="C" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="GCC" scheme="http://yoursite.com/tags/GCC/"/>
+    
+  </entry>
   
   <entry>
     <title>Java获取传入参数</title>
